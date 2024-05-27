@@ -29,12 +29,12 @@ steps:
 - name: 'gcr.io/$PROJECT_ID/tfx-cli'
   args: ['pipeline', 'create', '--engine', 'kubeflow', '--pipeline_path', '$_PIPELINE_DSL', '--endpoint', '$_ENDPOINT']
   env: 
-  - 'GCP_REGION=$_GCP_REGION'  
+  - 'GCP_REGION=us-central1'  
   - 'PROJECT_ID=$PROJECT_ID'
   - 'PIPELINE_NAME=${_PIPELINE_NAME}-${TAG_NAME}'
   - 'MODEL_NAME=$_MODEL_NAME'  
   - 'ARTIFACT_STORE_URI=$_ARTIFACT_STORE_URI'
-  - 'CUSTOM_SERVICE_ACCOUNT=$_CUSTOM_SERVICE_ACCOUNT'
+  - 'CUSTOM_SERVICE_ACCOUNT=tfx-tuner-caip-service-account@qwiklabs-gcp-01-836fabd851d0.iam.gserviceaccount.com'
   - 'DATA_ROOT_URI=$_DATA_ROOT_URI'
   - 'KUBEFLOW_TFX_IMAGE=gcr.io/$PROJECT_ID/$_TFX_IMAGE_NAME:$TAG_NAME'
   - 'RUNTIME_VERSION=_$_RUNTIME_VERSION'
